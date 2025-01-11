@@ -1,0 +1,16 @@
+class Solution(object):
+    def topKFrequent(self, nums, k):
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: List[int]
+        """
+
+        top_k = defaultdict(int)
+
+        for num in nums:
+            top_k[num] += 1
+
+        top_k_sort  = sorted(top_k.keys(), key=lambda x: top_k[x], reverse=True)
+
+        return top_k_sort[:k]        
