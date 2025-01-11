@@ -1,5 +1,5 @@
 # Prefix and condition 
-class Solution1(object):
+class Solution(object):
     def productExceptSelf(self, nums):
         """
         :type nums: List[int]
@@ -30,6 +30,10 @@ class Solution1(object):
                 res.append(mul_0)
         
         return res
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
+
+
 
 # Prefix and suffix
 # class Solution(object):
