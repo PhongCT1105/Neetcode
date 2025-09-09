@@ -18,8 +18,7 @@ class Solution:
             total.append(i)
             dfs(i + 1, total, num + 1)
             total.pop()
-            num -= 1
-            dfs(i + 1, total, num + 1)
+            dfs(i + 1, total, num)
             
 
         dfs(1, [], 0)
