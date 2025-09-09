@@ -5,7 +5,8 @@ class Solution:
 
         def dfs(i, total, num):
             # Break case:
-
+            if sum(total) > n:
+                return
             if num == k:
                 if sum(total) == n:
                     res.append(total[:] )
@@ -13,7 +14,6 @@ class Solution:
 
             if i > 9:
                 return
-
 
             total.append(i)
             dfs(i + 1, total, num + 1)
