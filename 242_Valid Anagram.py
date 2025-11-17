@@ -1,27 +1,16 @@
-class Solution(object):
-    def isAnagram(self, s, t):
-        """
-        :type s: str
-        :type t: str
-        :rtype: bool
-        """
-        count = {}
+class Solution:
 
-        if len(s) != len(t):
-            return False
+    def get_char_map(self, s: str) -> []:
+        char_map = [0] * 26
+        for c in s:
+            char_map[ord(c)-ord('a')] += 1
+        
+        return char_map
 
-        for i in range (len (s)):
-            if s[i] not in count:
-                count[s[i]] = 1
-            else:
-                count[s[i]] += 1
-            
-            if t[i] not in count:
-                count[t[i]] = -1
-            else:
-                count[t[i]] -= 1
 
-        for i in count.values():
-            if i != 0:
-                return False
-        return True
+    def isAnagram(self, s: str, t: str) -> bool:
+
+        char_map_s = self.get_char_map(s)
+        char_map_t = self.get_char_map(t)
+
+        return char_map_s == char_map_t
